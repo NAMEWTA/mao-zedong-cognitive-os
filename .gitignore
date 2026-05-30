@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Editor / OS cruft
+*.swp
+*~
+.idea/
+.vscode/
+
+# Optional external knowledge base (clone separately; do not commit)
+MaoZeDongAnthology/
+MaoZeDongAnthology-master/
