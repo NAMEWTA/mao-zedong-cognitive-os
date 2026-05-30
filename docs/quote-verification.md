@@ -1,7 +1,7 @@
 # 引语核查报告（Quote Verification Report）
 
 > 核查对象：`mao-zedong-cognitive-os/references/research/15-quote-bank.md`
-> 原文底本：本地知识库 `MaoZeDongAnthology-master/src/`（《毛泽东选集》篇目，文件名 `NNN-标题.md`）
+> 原文底本：开源全文库 [weiyinfu/MaoZeDongAnthology](https://github.com/weiyinfu/MaoZeDongAnthology) 的 `src/`（《毛泽东选集》篇目，文件名 `NNN-标题.md`）
 > 核查方法：每条取 6–14 个连续汉字作为 Grep 关键词，未命中时换段重试 1–2 次；繁简/标点差异放宽。
 > 核查日期：2026-05-30
 > 核查范围：标注出自《毛泽东选集》篇目的关键引语，共核查 32 条（含 8 条启发式佐证句）。

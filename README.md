@@ -5,7 +5,7 @@
 > *"Who are our enemies? Who are our friends? This is a question of the first importance for the revolution."* — *Analysis of the Classes in Chinese Society*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai/code)
+[![Works with](https://img.shields.io/badge/works%20with-.agents%20%26%20.claude-blueviolet)](https://agents.md)
 [![AgentSkill](https://img.shields.io/badge/AgentSkill-valid-green)](https://docs.claude.com/en/docs/claude-code/skills)
 
 An [AgentSkill](https://docs.claude.com/en/docs/claude-code/skills) that distills Mao Zedong's methodology for **analyzing problems, formulating strategy, and organizing action** — together with his personality and voice — into a conversational, citable **cognitive operating system**. When activated, it talks to you in the first person as *"the Teacher" (教员)*: investigate before judging, grasp the principal contradiction, despise the enemy strategically while taking it seriously tactically, the road is tortuous but the future is bright.
@@ -29,21 +29,24 @@ Plus: **12 decision heuristics** (selected from 33) · a complete **Expression D
 
 ---
 
-## Install (Claude Code)
+## Install
 
-Skills live in `.claude/skills/<name>/`. Install at the **user level** (available everywhere) or **project level** (one repo).
+This is a standard **[AgentSkill](https://agents.md)** — it works with any agent that loads skills (Claude Code, Codex, and others). Drop the skill folder into a skills directory: **`.agents/skills/`** (cross-agent) or **`.claude/skills/`** (Claude Code), at the **user** level (`~/`, available everywhere) or the **project** level (`<repo>/`, one project).
 
 ```bash
 git clone https://github.com/NAMEWTA/mao-zedong-cognitive-os.git
-# user-level:
-mkdir -p ~/.claude/skills && cp -r mao-zedong-cognitive-os/mao-zedong-cognitive-os ~/.claude/skills/
-# or project-level:
-mkdir -p /your/project/.claude/skills && cp -r mao-zedong-cognitive-os/mao-zedong-cognitive-os /your/project/.claude/skills/
+SKILL=mao-zedong-cognitive-os/mao-zedong-cognitive-os   # inner folder = the skill (contains SKILL.md)
+
+# cross-agent, user level:
+mkdir -p ~/.agents/skills && cp -r "$SKILL" ~/.agents/skills/
+# Claude Code, user level:
+mkdir -p ~/.claude/skills && cp -r "$SKILL" ~/.claude/skills/
+# project level: replace ~ with your project root, e.g.  /your/project/.agents/skills/
 ```
 
-> Note the nesting: the repo root is `mao-zedong-cognitive-os/`, and the skill folder you copy is the inner `mao-zedong-cognitive-os/` (the one containing `SKILL.md`).
+> Note the nesting: the repo root is `mao-zedong-cognitive-os/`; the skill folder you copy is the inner `mao-zedong-cognitive-os/` (the one containing `SKILL.md`).
 
-Then trigger it in Claude Code:
+Then trigger it in your agent:
 
 ```
 > 教员    /  毛泽东  /  毛选
@@ -109,10 +112,6 @@ mao-zedong-cognitive-os/                  ← this repo
         ├── 14-voice-and-dialogue.md      ← voice layer + 4 response templates
         └── 15-quote-bank.md              ← quote bank + model→essay mapping
 ```
-
-## How it was built
-
-Haiku fan-out web research (personality / methods / rhetoric / external reception / key decisions / leadership — 6 angles) + close reading of 12 clustered *Selected Works* essays → Opus synthesis into the four modules and the dialogue protocol → every quote checked verbatim against the local full text (28 of 32 exact matches; the rest corrected or marked as paraphrase). See `docs/`.
 
 ---
 

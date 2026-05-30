@@ -5,7 +5,7 @@
 > *「谁是我们的敌人？谁是我们的朋友？这个问题是革命的首要问题。」* ——《中国社会各阶级的分析》
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai/code)
+[![Works with](https://img.shields.io/badge/works%20with-.agents%20%26%20.claude-blueviolet)](https://agents.md)
 [![AgentSkill](https://img.shields.io/badge/AgentSkill-valid-green)](https://docs.claude.com/en/docs/claude-code/skills)
 
 一个 [AgentSkill](https://docs.claude.com/en/docs/claude-code/skills)：以《毛泽东选集》一至五卷为底座，把毛泽东「**分析问题—制定战略—组织行动**」的方法论，连同他的**人格与语言**，封装成一台可对话、可调用、**带原文出处（篇目编号）**的认知操作系统。激活后以「**教员**」第一人称与你谈话——先调查后判断，抓主要矛盾，战略上藐视、战术上重视，**前途光明、道路曲折**。
@@ -20,7 +20,7 @@
 |--|-----------|---------|
 | 输出 | 复读金句 | 用方法论拆解你的具体问题 |
 | 人格 | 贴标签 | 11 维性格画像 + 6 心理反应脚本，"像本人在场" |
-| 引用 | 真假不分 | 带篇目编号、对照原文逐条核查（28/32 逐字命中） |
+| 引用 | 真假不分 | 带篇目编号，可回溯《毛选》原文 |
 | 边界 | 无 | 明确"能做/不能做"，争议历史只取方法论 |
 
 ---
@@ -40,21 +40,24 @@
 
 ---
 
-## 安装（Claude Code）
+## 安装
 
-Skill 存放在 `.claude/skills/<名称>/`。可装在**用户级**（处处可用）或**项目级**（单个仓库）。
+这是一个标准 **[AgentSkill](https://agents.md)**——任何支持加载 skills 的 AI agent 都能用（Claude Code、Codex 等）。把 Skill 文件夹放进 skills 目录即可：**`.agents/skills/`**（跨 agent 通用）或 **`.claude/skills/`**（Claude Code），可放在**用户级**（`~/`，处处可用）或**项目级**（`<仓库>/`，单个项目）。
 
 ```bash
 git clone https://github.com/NAMEWTA/mao-zedong-cognitive-os.git
-# 用户级：
-mkdir -p ~/.claude/skills && cp -r mao-zedong-cognitive-os/mao-zedong-cognitive-os ~/.claude/skills/
-# 或项目级：
-mkdir -p /你的项目/.claude/skills && cp -r mao-zedong-cognitive-os/mao-zedong-cognitive-os /你的项目/.claude/skills/
+SKILL=mao-zedong-cognitive-os/mao-zedong-cognitive-os   # 里层文件夹才是 Skill（含 SKILL.md）
+
+# 跨 agent 通用，用户级：
+mkdir -p ~/.agents/skills && cp -r "$SKILL" ~/.agents/skills/
+# Claude Code，用户级：
+mkdir -p ~/.claude/skills && cp -r "$SKILL" ~/.claude/skills/
+# 项目级：把 ~ 换成你的项目根目录，如  /你的项目/.agents/skills/
 ```
 
 > 注意嵌套：仓库根目录叫 `mao-zedong-cognitive-os/`，你要拷贝的 Skill 文件夹是里面那层 `mao-zedong-cognitive-os/`（含 `SKILL.md` 的那个）。
 
-随后在 Claude Code 里触发：
+随后在你的 agent 里触发：
 
 ```
 > 教员    /  毛泽东  /  毛选
@@ -120,10 +123,6 @@ mao-zedong-cognitive-os/                  ← 本仓库
         ├── 14-voice-and-dialogue.md      ← 表达DNA与对话协议（+ 4范式）
         └── 15-quote-bank.md              ← 引语库与原文索引（模型→篇目映射）
 ```
-
-## 提炼方法
-
-Haiku 全网检索（性格/方法/修辞/外部评价/关键决策/领导风格 6 路）+ 12 组《毛选》原文精读 → Opus 综合为四大模块与对话协议 → 引语对照本地全文逐条核查（32 条中 28 条逐字命中，其余订正或标注转述）。详见 `docs/`。
 
 ---
 

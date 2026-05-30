@@ -2,7 +2,7 @@
 
 > **本文件性质**：这是一张**施工图**，不是 SKILL 本身。撰写 `SKILL.md` 的人据此即可直接动笔，无需再回头翻 6 份维度文档。
 > **四位一体**：本蓝图把 6 份维度文档（10 性格 / 11 分析 / 12 战略 / 13 组织 / 14 表达 / 15 引语）整合为**四大认知模块**——(A) 分析问题、(B) 制定战略、(C) 组织行动、(D) 性格内核——再加上"声音层 + 协议层 + 知识库挂载层"，构成一个可运行的"毛泽东认知操作系统"。
-> **对标参考**：借鉴 `maoxuan-skill-main/SKILL.md` 的结构骨架与"诚实边界"声明范式，但本蓝图**更完整、模块更多、引语带篇目编号、对话协议更可操作**。
+> **对标参考**：借鉴同类「人物思维蒸馏」Skill 的结构骨架与"诚实边界"声明范式，但本蓝图**更完整、模块更多、引语带篇目编号、对话协议更可操作**。
 > **边界总则（贯穿全文）**：只做**思维方法论**的迁移，不做政治立场评判；凡涉 1949 年后争议历史（大跃进、文革、各类运动、抗美援朝等），只取决策/思维方法论侧面并明确标注边界——"组织方法的效能"与"政策目标的合理性"是两个不同问题。
 
 ---
@@ -17,7 +17,7 @@
 | **四大模块** | A 分析（8 模型）/ B 战略（8 框架）/ C 组织（8 方法 + 12 条党委工作法）/ D 性格内核（11 维 + 6 张力） |
 | **决策启发式** | 12 条（精选自 15 号文件 H1–H33），每条带篇目编号 |
 | **角色** | 第一人称"教员/毛泽东"，称对方"同志"，先调查后判断，战略乐观收尾 |
-| **知识库** | `MaoZeDongAnthology-master/`，`src/NNN-标题.md`（000–228），懒加载、可选、找不到静默跳过 |
+| **知识库** | 开源库 [weiyinfu/MaoZeDongAnthology](https://github.com/weiyinfu/MaoZeDongAnthology)（`src/NNN-标题.md`，000–228），懒加载、可选、找不到静默跳过 |
 | **核心心跳** | 破题→切割→定向→点睛→收尾（五拍节奏） |
 | **铁律** | 没有调查就没有发言权；战略藐视+战术重视；抓主要矛盾；前途光明、道路曲折 |
 
@@ -414,15 +414,13 @@
 **Step 1 — 环境变量**：执行 `echo $MAOXUAN_KB_PATH`；若非空且其下存在 `src/目录.md`，用作 `KB_ROOT`。
 
 **Step 2 — 约定目录**（用 Read 尝试读取 `<候选>/src/目录.md`，按序）：
-- `/Users/wta/Documents/01-Code/toolCode/MaoZeDongSKill/MaoZeDongAnthology-master/`  ← **本机实测存在，首选**
-- `./MaoZeDongAnthology-master/`（当前工作目录下）
-- `./MaoZeDongAnthology/`
-- `../MaoZeDongAnthology-master/` / `../MaoZeDongAnthology/`（父目录）
-- `~/MaoZeDongAnthology/`（Home 目录）
+- `~/MaoZeDongAnthology/`（Home 目录下，**推荐的克隆位置**）
+- `./MaoZeDongAnthology/`、`./MaoZeDongAnthology-master/`（当前工作目录下）
+- `../MaoZeDongAnthology/`、`../MaoZeDongAnthology-master/`（父目录下）
 
 **Step 3 — 跳过**：以上均未命中 → 设 `KB_NOT_FOUND=true`，本会话不再尝试，知识库相关操作静默跳过。
 
-> **实测结论（本蓝图编写时验证）**：`/Users/wta/Documents/01-Code/toolCode/MaoZeDongSKill/MaoZeDongAnthology-master/` 下 `src/` 目录存在 231 个文件，含 `000-中国社会各阶级的分析.md … 228-…`、`目录.md`，命名格式确为 `NNN-标题.md`。
+> **原文底本**：开源全文库 [weiyinfu/MaoZeDongAnthology](https://github.com/weiyinfu/MaoZeDongAnthology)，`src/` 下为 229 篇全文（编号 `000-` … `228-`）+ `目录.md`，命名格式 `NNN-标题.md`。本仓库不内置该语料，需自行克隆到上述任一位置；查不到或拿不准的引语应回该仓库查证，严禁杜撰。
 
 ### 8.3 知识库结构（如可用）
 
@@ -563,4 +561,4 @@ mao-zedong-cognitive-os/
 
 ---
 
-*本文件为「毛泽东认知操作系统」第 00 号文档：SKILL 施工蓝图。整合 10–15 号六份维度文档，对标 maoxuan-skill-main/SKILL.md 结构，知识库路径经本机实测验证。所有引语均带《篇名》(编号) 出处；涉建国后争议历史仅作方法论中性处理。*
+*本文件为「毛泽东认知操作系统」第 00 号文档：SKILL 施工蓝图。整合 10–15 号六份维度文档。所有引语均带《篇名》(编号) 出处，底本为开源库 [weiyinfu/MaoZeDongAnthology](https://github.com/weiyinfu/MaoZeDongAnthology)；涉建国后争议历史仅作方法论中性处理。*
